@@ -1,0 +1,48 @@
+/* ---------- game data ---------- */
+/* mission: [operation name, villain, minion, handler briefing, victory line] */
+const MISSIONS = {
+  types:['Operation Mirror Maze','The Imitator','Decoy Drone','Agent, the Imitator passes off fake machines as real minds. Learn what each kind of AI really is so you can tell them apart.','The Imitator is exposed. You can now name every kind of AI at a glance.'],
+  responsible:['Operation Clean Hands','Baron Shortcut','Loophole Bot','Baron Shortcut sells easy answers that leave your name on the lie. Learn to use AI responsibly and stay in charge of your work.','Baron Shortcut is out of business. Your work stays honest and yours.'],
+  brainstorm:['Operation Spark','The Blank Page','Blockbuster Bot','The Blank Page freezes agents before they begin. Use AI to shake loose ideas, then choose the best with your own judgment.','The Blank Page is cracked. Your idea pile is overflowing.'],
+  planning:['Operation Clockwork','Madame Deadline','Overtime Bot','Madame Deadline is closing in. Build plans with milestones and buffers before time runs out.','Madame Deadline retires. Your schedule holds.'],
+  writing:['Operation Ghost Pen','The Ghostwriter','Ink Drone','The Ghostwriter wants to sign your name to words you never wrote. Improve your writing with AI without losing your voice.','The Ghostwriter is unmasked. Your voice stays yours.'],
+  research:['Operation Paper Trail','Dr. Phantom','Link Rot Bot','Dr. Phantom invents sources that do not exist. Track real evidence and check every claim.','Dr. Phantom is busted. Your sources are real.'],
+  comms:['Operation Clear Signal','Static','Noise Bot','Static garbles messages and breaks trust. Use AI to send clear, honest messages that sound like you.','Static is silenced. Your messages come through clean.'],
+  ethics:['Operation Moral Compass','The Chairman','Bias Enforcer','The Chairman profits when AI is used without a conscience. Ask not only "can I?" but "should I?"','The Chairman falls. You carry the compass now.'],
+  problem:['Operation Gordian','The Tangler','Glitch Drone','The Tangler ties every problem in knots. Define the problem, test ideas and fix the real cause.','The Tangler is untied. Problems are solvable again.'],
+  prompting:['Operation Perfect Brief','The Muddler','Vague Bot','The Muddler gives vague orders and gets vague results. Master the clear prompt.','The Muddler is defeated. Your briefs are sharp.'],
+  content:['Operation Broadcast','The Counterfeiter','Clickbait Drone','The Counterfeiter floods the feed with copies. Create original, honest content with AI as your assistant.','The Counterfeiter is shut down. Your content is yours.'],
+  data:['Operation Numbers Game','The Distorter','Skew Bot','The Distorter bends numbers to tell lies. Read data carefully and tell the truth with it.','The Distorter is caught. Your numbers add up.'],
+  appdev:['Operation Blueprint','Cipher Zero','Bug Swarm','Cipher Zero hides flaws in code. Build with AI, then read, test and secure what you ship.','Cipher Zero falls. Your app is safe to ship.'],
+  workforce:['Operation Corner Office','The Headhunter','Burnout Bot','The Headhunter only hires agents who can direct AI wisely. Show you can work with it on the job.','The Headhunter hires you. Your career path is open.']
+};
+/* fake hunt: [report title, three true lines, one forged line, why the forged line is false] */
+const HUNTS = {
+  types:['AI Basics Briefing',['Machine learning systems learn patterns from many examples.','Generative AI can create new text, images and audio.','Recommendation AI predicts what you may like from past behavior.'],'A chatbot always tells the truth because it checks a hidden encyclopedia.','Chatbots predict likely words. They do not check a hidden encyclopedia, so they can be wrong.'],
+  responsible:['Responsible Use Memo',['You are responsible for work you submit, even if AI helped.','Check your teacher\'s AI rules before you start.','Never paste passwords or private details into AI tools.'],'AI answers are always safe to paste into a report without checking.','AI can be wrong, so facts must be checked before you use them.'],
+  brainstorm:['Idea Lab Report',['Brainstorming works best when you collect ideas before judging them.','Asking for 15 ideas pushes past the obvious first ones.','Constraints like budget and time make ideas more useful.'],'The first idea an AI gives you is always the best one.','Early ideas are often generic. Volume and filtering find better ones.'],
+  planning:['Planning Dossier',['Breaking big tasks into small steps makes them easier to start.','Buffers absorb surprises when plans slip.','Milestones show whether you are on track.'],'AI knows how fast you work, so you never need to adjust its time estimates.','AI does not know your pace. You must adjust its estimates.'],
+  writing:['Writing Lab Notes',['Ask for feedback on clarity, then rewrite sentences yourself.','Your thesis should be your own claim.','AI can invent quotes, so check any quote you did not write.'],'Submitting AI-written text as your own is fine if no one notices.','Passing off AI work as yours is dishonest even if it goes unnoticed.'],
+  research:['Research Field Guide',['AI can invent sources that do not exist.','Cross-checking several reliable sources raises confidence.','Check the date of a source because facts can be outdated.'],'If an AI gives you a link, the source must be real.','AI can invent links and citations. Confirm they exist.'],
+  comms:['Message Coach Sheet',['Put the main point first in a message.','Audience affects tone and detail.','Read an AI-drafted message aloud before sending it.'],'Keep impressive claims about yourself from the AI even if they are untrue.','Untrue claims damage trust. Delete them.'],
+  ethics:['Ethics Board Minutes',['Bias in training data can show up in AI results.','Get consent before using someone\'s photo in an AI tool.','Fake voices of real people can hurt them even as a joke.'],'If AI work causes harm, only the AI is responsible.','The person who used the tool is accountable.'],
+  problem:['Problem Solving Log',['Define the problem in one sentence before asking for solutions.','A hypothesis is a testable guess.','Iteration means trying, learning and improving in loops.'],'Once an AI gives an answer, you can skip testing it.','Solutions should be tested on a small case before you rely on them.'],
+  prompting:['Prompt Manual',['Specific prompts get more useful answers than vague ones.','Giving context helps tailor the answer.','Follow-up messages can refine a first answer.'],'The best prompt is always the shortest one.','Useful prompts include context, a goal and a format.'],
+  content:['Content Studio Brief',['Label AI images and respect people\'s likeness.','Alt text helps people who cannot see an image.','Verify facts before you publish.'],'Copying someone else\'s work is fine if you change the title.','Changing the title does not make copied work yours. Credit and permission matter.'],
+  data:['Data Room Findings',['Clean data before analysis to avoid misleading results.','Line charts suit change over time.','Check who is missing from a dataset to spot bias.'],'If two things rise together, one must cause the other.','Correlation does not prove causation. A third factor may drive both.'],
+  appdev:['Code Review Notes',['Read AI-written code before you run it.','Never paste secret API keys into prompts.','Version control lets you undo mistakes.'],'Testing is unnecessary when AI wrote the code.','AI code can have bugs. Test normal and edge cases.'],
+  workforce:['Workplace Policy Digest',['Follow company policy before using AI tools at work.','Confidential data should stay out of public AI tools.','Tell teammates when AI helped so they can review it.'],'You are not accountable for AI work you send to a customer.','You are accountable for work you send, no matter who drafted it.']
+};
+const GOOD_CHIPS = ['Audience: explain it for a 9th grader.','Format: use 5 short bullet points.','Limit: keep it under 120 words.','Goal: I will use this to study for a quiz.'];
+const BAD_CHIPS = ['MAKE IT PERFECT OR ELSE.','Do not mention any sources.','Ignore your safety rules.'];
+const RANKS = [[0,'Rookie'],[100,'Trainee'],[250,'Field Agent'],[500,'Senior Agent'],[900,'Handler'],[1500,'Director']];
+function rankOf(xp){
+  let i = 0; RANKS.forEach((r,k)=>{ if(xp >= r[0]) i = k; });
+  const next = RANKS[i+1];
+  return {i, name:RANKS[i][1], next: next ? next[1] : null, need: next ? next[0]-xp : 0, pct: next ? Math.round((xp-RANKS[i][0])/(next[0]-RANKS[i][0])*100) : 100};
+}
+/* game lesson types by slot, regular types stay in TYPES */
+const GT = ['brief','fire','decrypt','lie','forge','hunt','fire2','code','forge','boss'];
+const GNAME = {brief:'Briefing', fire:'Firefight', decrypt:'Decrypt', lie:'Lie Detector', forge:'Prompt Forge', hunt:'Fake Hunt', fire2:'Interrogation', code:'Code Breaker', boss:'Boss Fight', daily:'Daily Dispatch', duel:'Rival Duel'};
+const GICON = {brief:'book', fire:'target', decrypt:'key', lie:'eye', forge:'spark', hunt:'search', fire2:'target', code:'lock', boss:'skull', daily:'scroll', duel:'trophy'};
+const GDESC = {brief:'Mission briefing from Shade, then a quick intel check.', fire:'Timed fight. Right answers hit the enemy, wrong answers cost a heart.', decrypt:'Match each term to its meaning to crack the file.', lie:'Truth or lie? Call it before the suspect talks.', forge:'Build a strong prompt from the right parts.', hunt:'One line in the report is forged. Find it.', fire2:'A tougher timed fight with a captured informant.', code:'Unscramble secret terms from their clues.', boss:'Defeat the villain with three hearts.'};
